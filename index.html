@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PS4 Exploit Host by GamerHack</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    /* تنسيق شاشة قفل الرمز السري المتوافقة مع متصفح PS4 */
+    #lock-screen {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 150px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+    }
+    .lock-box {
+        background-color: #1e1e1e;
+        padding: 40px;
+        border-radius: 12px;
+        display: inline-block;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+        border: 1px solid #333;
+    }
+    #pin-input {
+        padding: 12px;
+        font-size: 22px;
+        border-radius: 6px;
+        border: 1px solid #555;
+        background-color: #2a2a2a;
+        color: #fff;
+        text-align: center;
+        width: 240px;
+        outline: none;
+    }
+    .lock-btn {
+        padding: 12px 30px;
+        font-size: 18px;
+        background-color: #0070d1;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    .lock-btn:hover {
+        background-color: #005fb8;
+    }
+    .error {
+        color: #ff4444;
+        margin-top: 15px;
+        font-size: 16px;
+    }
+    /* إخفاء محتوى الهوست الأصلي لحين إدخال الرمز */
+    #main-site-content {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+    <!-- شاشة إدخال الرمز السري -->
+    <div id="lock-screen">
+        <div class="lock-box">
+            <h2 style="color: yellow; margin-bottom: 20px;">🔒 منطقة محمية - PS4 Host</h2>
+            <p style="margin-bottom: 15px;">الرجاء إدخال الرمز السري للمتابعة:</p>
+            <input type="password" id="pin-input" placeholder="أدخل الرمز" autofocus>
+            <br>
+            <button class="lock-btn" onclick="checkPin()">دخول</button>
+            <div id="error-msg" class="error"></div>
+        </div>
+    </div>
+
+    <!-- المحتوى الأصلي للموقع الخاص بك -->
+    <div id="main-site-content">
+        <script>
+        var histlength=history.length;history.go(-histlength 2);
+        </script>
+        <h1 id=msgs>PS4  Exploit Host by GamerHack</h1>
+        <hr>
+        <br>
+        <div id=menu>
+        <h1 style="font-size: 18px;color: yellow;">Select Your Firmware</h1>
+        <button class="btn btn-multi" onmouseover="msgs.innerHTML='PS4 GoldHEN Host for 5.05 and 7.00 to 14.00 FW - (Auto Exploit Selection)'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'" onclick="location.replace('g2all/index.html')"> GoldHEN Multi FW </button>
+        <button class="btn" onmouseover="msgs.innerHTML='PS4 5.05 FW Host v2.5'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'" onclick="location.replace('505/index.html')"> 5.05 FW v2.5 </button>
+        <a href="672goldhen/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 6.72 FW GoldHEN Host'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'"> 6.72 FW GoldHEN </button></a>
+        <a href="672/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 6.72 FW Host v3.0'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'"> 6.72 FW v3.0 </button></a>
+        <br>
+        <a href="900goldhen/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 9.00 FW GoldHEN Host - (FontFaceSet Webkit)'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'"> 9.00 FW GoldHEN </button></a>
+        <a href="900v3/index.html"><button class="btn" onmouseover="msgs.innerHTML='PS4 9.00 FW Host v3.0 - (FontFaceSet Webkit)'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'"> 9.00 FW v3.0 </button></a>
+        <br>
+        <button class="btn" onmouseover="msgs.innerHTML='Restore a Host to User&#8217;s Guide without using DNS'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'" onclick="location.replace('restore/index.html')"> Restore Host </button>
+        <br>
+        <button class="btn btn-onln" onmouseover="msgs.innerHTML='If you like my work you can support me with a donation.'" onmouseout="msgs.innerHTML='PS4  Exploit Host by GamerHack'" onclick="donations()" style="margin-top: 137px;margin-bottom: 77px;width: 468px;"> For Donations (Only in Cryptocurrencies) </button>
+        <h1 style="margin-top: 78px;">Designed by:<a href="https://twitter.com/GamerHack93" style="color: #f31414;margin-left: 10px;margin-right: 10px;">@GamerHack93</a>A special thanks to all the devs on the scene.</h1>
+        </div>
+        <div id=crypto>
+        <h1 style="font-size: 18px;color: yellow;">Donate with Bitcoin (BTC):</h1>
+        <img src="btc.jpg" width="150" height="150">
+        <br>
+        <h1 style="font-size: 18px;">bc1q6cnsykmvem6zgw8wag3ygee0jkhtxj6rkp2nrm</h1>
+        <br>
+        <h1 style="font-size: 18px;color: yellow;">Donate with Ethereum (ETH):</h1>
+        <img src="eth.jpg" width="150" height="150">
+        <h1 style="font-size: 18px;">0x7Ae1825ddE196925dB8B7832F436cA0eAeaF932c</h1>
+        <button class="btn" onclick="load_menu()"> Return </button>
+        </div>
+    </div>
+
+    <script>
+        // الرمز السري الذي طلبته
+        const SECRET_PIN = "9922"; 
+
+        function checkPin() {
+            const enteredPin = document.getElementById("pin-input").value;
+            if (enteredPin === SECRET_PIN) {
+                document.getElementById("lock-screen").style.display = "none";
+                document.getElementById("main-site-content").style.display = "block";
+                // حفظ حالة الدخول حتى لا يطلب الكود مع كل تنقل داخل الجلسة
+                sessionStorage.setItem("isUnlocked", "true");
+            } else {
+                document.getElementById("error-msg").innerText = "الرمز غير صحيح! حاول مرة أخرى.";
+                document.getElementById("pin-input").value = "";
+            }
+        }
+
+        // التحقق مما إذا كان المستخدم قد أدخل الرمز مسبقاً في هذه الجلسة
+        window.onload = function() {
+            if (sessionStorage.getItem("isUnlocked") === "true") {
+                document.getElementById("lock-screen").style.display = "none";
+                document.getElementById("main-site-content").style.display = "block";
+            }
+        }
+
+        // دعم الضغط على زر Enter من لوحة المفاتيح
+        document.getElementById("pin-input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                checkPin();
+            }
+        });
+
+        function donations(){
+            document.getElementById("crypto").style.display = "block";
+            document.getElementById("menu").style.display = "none";
+        }
+
+        function load_menu(){
+            document.getElementById("menu").style.display = "block";
+            document.getElementById("crypto").style.display = "none";
+        }
+    </script>
+</body>
+</html>
